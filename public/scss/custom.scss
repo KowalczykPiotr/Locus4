@@ -1,0 +1,58 @@
+body {
+	font-size: 0.8rem;
+}
+
+.w-80 {
+	width: 80%!important;
+}
+
+#modalClient {
+
+	.modal-footer {
+		padding-right: 0px;
+	}
+
+	.tab-pane{
+		min-height: 400px;
+		/*background-color: #0a5e69;*/
+	}
+
+	/*.modal-body { height: 300px; }*/
+
+	.ddd {
+		height:400px;
+	}
+	.pull-bottom {
+		position: absolute;
+		bottom: 10px;
+		width: 100%;
+	}
+	
+	#fixModalTable {
+		$table_height: 200px;
+		
+		
+			height: $table_height;
+		
+	}
+	
+	
+
+}
+
+#fixTable {
+	
+	$table_height: 200px;
+	$column_1_width: 40px;
+	$column_2_width: 500px;
+	$column_3_width: 200px;
+	$column_4_width: 200px;
+	
+	height: $table_height;
+	
+	td:nth-child(1), th:nth-child(1) { width: $column_1_width; }
+	td:nth-child(2), th:nth-child(2) { min-width: $column_2_width; }
+	td:nth-child(3), th:nth-child(3) { min-width: $column_3_width; }
+	td:nth-child(4), th:nth-child(4) { min-width: $column_4_width; }
+	
+}
