@@ -1,14 +1,14 @@
 @extends('layouts.app')
 @section('content')
 
-
+<script src="{{ URL::asset('js/my-scripts/clients-list.js') }}" type="text/javascript"></script>
 <script src="{{ URL::asset('js/tableHeadFixer.js') }}" type="text/javascript"></script>
 
 <script> var root = './'; </script>
 <script> var _token = "{{ csrf_token() }}" </script>
 
 
-<div class="container mt-5" ng-app="mainModule" ng-controller="simpleCtrl">
+<div class="container mt-5" ng-app="mainModule" ng-controller="clientsCtrl">
 
 
     <label><span class="oi oi-magnifying-glass"  aria-hidden="true"></span>

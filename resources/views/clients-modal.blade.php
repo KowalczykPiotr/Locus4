@@ -1,4 +1,4 @@
-<script src="{{ URL::asset('/js/my-scripts/provide-letter.js') }}" type="text/javascript"></script>
+<script src="{{ URL::asset('js/my-scripts/provide-letter.js') }}" type="text/javascript"></script>
 
 <div  ng-controller="provideCtrl" class="modal fade3" id="modalClient" tabindex="-1" role="dialog" aria-labelledby="modalDelArtConfirmLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">

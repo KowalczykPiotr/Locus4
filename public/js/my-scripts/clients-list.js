@@ -1,19 +1,4 @@
-var app = angular.module("mainModule", ['ngSanitize','base64'], function($interpolateProvider) {
-
-    $interpolateProvider.startSymbol('[[');
-    $interpolateProvider.endSymbol(']]');
-});
-
-app.controller('simpleCtrl', simpleController);
-
-
-app.filter("asDate", function () {
-    return function (input) {
-        return new Date(input);
-    }
-});
-
-function simpleController($scope, $rootScope, $http, $base64, $timeout) {
+app.controller('clientsCtrl', function ($scope, $rootScope, $http, $base64, $timeout) {
 
     const
         _EMPTY = 0,
@@ -69,34 +54,34 @@ function simpleController($scope, $rootScope, $http, $base64, $timeout) {
             }
 
         })
-        .then(function(response) {
+            .then(function(response) {
 
-            if (response.data.length == 10) {
-                $scope.hide_loader = false;
-            }
-            else {
-                $scope.hide_loader = true;
-            }
+                if (response.data.length == 10) {
+                    $scope.hide_loader = false;
+                }
+                else {
+                    $scope.hide_loader = true;
+                }
 
-            $scope.customers = response.data;
+                $scope.customers = response.data;
 
-            if ($scope.quene == _FIRST) {
+                if ($scope.quene == _FIRST) {
 
+                    $scope.quene = _EMPTY;
+                    $scope.listFirst();
+                }
+                else if ($scope.quene == _NEXT) {
+
+                    $scope.quene = _EMPTY;
+                    $scope.listNext();
+                }
+                else {
+                    $scope.quene = _EMPTY;
+                }
+
+            }, function(rejection) {
                 $scope.quene = _EMPTY;
-                $scope.listFirst();
-            }
-            else if ($scope.quene == _NEXT) {
-
-                $scope.quene = _EMPTY;
-                $scope.listNext();
-            }
-            else {
-                $scope.quene = _EMPTY;
-            }
-
-        }, function(rejection) {
-            $scope.quene = _EMPTY;
-        });
+            });
     }
 
 
@@ -131,35 +116,37 @@ function simpleController($scope, $rootScope, $http, $base64, $timeout) {
             }
 
         })
-        .then(function(response) {
-            if (response.data.length) {
-                $scope.hide_loader = false;
-                $scope.customers = $scope.customers.concat(response.data);
-            }
-            else {
-                $scope.hide_loader = true;
-            }
-            if ($scope.quene == _FIRST) {
+            .then(function(response) {
+                if (response.data.length) {
+                    $scope.hide_loader = false;
+                    $scope.customers = $scope.customers.concat(response.data);
+                }
+                else {
+                    $scope.hide_loader = true;
+                }
+                if ($scope.quene == _FIRST) {
+
+                    $scope.quene = _EMPTY;
+                    $scope.listFirst();
+                }
+                else if ($scope.quene == _NEXT) {
+
+                    $scope.quene = _EMPTY;
+                    $scope.listNext();
+                }
+                else {
+                    $scope.quene = _EMPTY;
+                }
+
+
+            }, function(rejection) {
 
                 $scope.quene = _EMPTY;
-                $scope.listFirst();
-            }
-            else if ($scope.quene == _NEXT) {
-
-                $scope.quene = _EMPTY;
-                $scope.listNext();
-            }
-            else {
-                $scope.quene = _EMPTY;
-            }
-
-
-        }, function(rejection) {
-
-            $scope.quene = _EMPTY;
-        });
+            });
     }
 
 
     $scope.listFirst();
-}
+
+
+});

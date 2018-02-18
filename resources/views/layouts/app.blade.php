@@ -28,7 +28,7 @@
     <script src="{{ URL::asset('/js/jquery-3.3.1.min.js') }}" type="text/javascript"></script>
 
     <script src="{{ URL::asset('/js/bootstrap.min.js') }}" type="text/javascript"></script>
-    <script src="{{ URL::asset('js/custom.js') }}" type="text/javascript"></script>
+    <script src="{{ URL::asset('js/my-scripts/custom.js') }}" type="text/javascript"></script>
     <script src="{{ URL::asset('js/print.min.js') }}" type="text/javascript"></script>
 
 
