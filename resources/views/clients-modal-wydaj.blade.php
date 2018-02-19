@@ -1,17 +1,15 @@
-
 <form ng-submit="provideLetter()" class="form-horizontal" role="form">
     <div class="d-flex flex-column ddd">
         <script>
             $(document).ready(function() {
                 $("#fixModalTable>table").tableHeadFixer();
 
-                $("#chSelect").change(function() {
-                    //var ckb = $(this).is(':checked');
+                $("#chSelectProvide").change(function() {
                     if ( $(this).is(':checked') ){
 
-                        $( "input:checked.dupcia" ).trigger( "click" );
+                        $( "input:checked.provide-all" ).trigger( "click" );
                     }
-                    $( ".dupcia" ).trigger( "click" );
+                    $( ".provide-all" ).trigger( "click" );
                 });
             });
         </script>
@@ -19,7 +17,7 @@
             <table class="table table-sm table-hover">
                 <thead>
                 <tr>
-                    <th><input type="checkbox" ng-model="provide.SelectDeselect" id="chSelect" ></th>
+                    <th><input type="checkbox" ng-model="provide.SelectDeselect" id="chSelectProvide" ></th>
                     <th>@lang('clients.col_sender')</th>
                     <th>@lang('clients.col_type')</th>
                     <th>@lang('clients.col_date')</th>
@@ -27,7 +25,7 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="item in letters">
-                        <td><input type="checkbox" class="dupcia" ng-model="provide.id[item.id]" value="[[item.id]]"></td>
+                        <td><input type="checkbox" class="provide-all" ng-model="provide.id[item.id]" value="[[item.id]]"></td>
                         <td>[[item.name]]</td>
                         <td>[[item.letter_type.name]]</td>
                         <td>[[item.created_at | asDate | date:'yyyy-MM-dd']]<td>
@@ -39,7 +37,7 @@
         <div class="row mt-auto">
             <div class="col-md-12">
                 <div ng-if="provide.status == 'OK'"    class="alert alert-success " role="alert">@lang('common.msg_provideOK')</div>
-                <div ng-if="provide.status == 'ERROR'" class="alert alert-danger " role="alert">@lang('common.msg_provideERROR')</div>
+                <div ng-if="provide.status == 'ERROR'" class="alert alert-danger " role="alert">@lang('common.msg_provideER')</div>
             </div>
         </div>
 

@@ -9,11 +9,12 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Auth;
 use PDF;
+use Mail;
 
 class LetterController extends Controller
 {
 
-    function index($customer_id = '*', $letter_type_id = '*') {
+    public function index($customer_id = '*', $letter_type_id = '*') {
 
         $letters = Letter::all()
             ->where('customer_id', '=', $customer_id)
@@ -36,7 +37,7 @@ class LetterController extends Controller
     }
 
 
-    function  provide(Request $request) {
+    public function  provide(Request $request) {
 
         if (! Auth::check()) redirect('./');
 
@@ -89,7 +90,7 @@ class LetterController extends Controller
 
 
 
-    function store(Request $request) {
+    public function store(Request $request) {
 
         if (! Auth::check()) redirect('./');
 
@@ -118,4 +119,59 @@ class LetterController extends Controller
         return 'ok';
 
     }
+
+    /*
+    protected  function  message($email) {
+
+
+    }
+    */
+    protected function sendMail($email, $print, $customer){
+
+        Mail::send('mail', compact( 'print', 'customer' ), function ($message) use ($email){
+
+            $message->to($email)->cc('bar@example.com')->subject( __('mail.subject') );
+        });
+
+        return;
+
+    }
+
+    public function mail(Request $request){
+
+
+        if (! Auth::check()) redirect('./');
+
+        $data = $request ->validate([
+
+            'customer_id'           =>  'required',
+            'list'                  =>  'required'
+        ]);
+
+        $customer = Customer::where('id', '=', $data['customer_id'])->first();
+
+
+        foreach ($data['list'] as $id => $val) {
+
+            if($val == 'true') {
+
+                $letters = Letter::where('id', '=', $id)->first();
+                $letters->load('letter_type');
+
+                $print[] = array(
+                    'id'   => $letters->id,
+                    'name' => $letters->name,
+                    'type' => $letters->letter_type->name,
+                    'date' => $letters->created_at->format('Y-m-d H:i:s')
+                );
+            }
+        }
+
+        $this->sendMail($customer->email ,$print, $customer);
+
+
+        return ('OK');
+
+    }
+
 }

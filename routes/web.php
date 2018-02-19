@@ -20,9 +20,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/clients', 'ClientsController@index');
 
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/mail', 'Api\LetterController@mail');
 
 
 Route::get('api/customer/{id}', 'Api\CustomerController@show');
@@ -33,14 +31,13 @@ Route::get('api/customers/{skip}/{limit}', 'Api\CustomerController@index');
 
 Route::get('api/letter_types/', 'Api\Letter_typeController@index');
 
-Route::get('api/letters/pdf', 'Api\LetterController@downloadPDF');
+//Route::get('api/letters/pdf', 'Api\LetterController@downloadPDF');
 Route::post('api/letters/provide/', 'Api\LetterController@provide')->middleware('auth');
-
+Route::post('api/letters/mail','Api\LetterController@mail')->middleware('auth');
+Route::post('api/letters/','Api\LetterController@store')->middleware('auth');
 
 Route::get('api/letters/', 'Api\LetterController@index');
 Route::get('api/letters/{customer_id}', 'Api\LetterController@index');
 Route::get('api/letters/{customer_id}/{letter_type_id}', 'Api\LetterController@index');
 
-
-Route::post('api/letters/','Api\LetterController@store')->middleware('auth');
 

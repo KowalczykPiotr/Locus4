@@ -13,9 +13,11 @@ app.controller('provideCtrl', function ($scope, $rootScope, $http, $base64, $tim
 
         $scope.add = {};
         $scope.provide = {};
+        $scope.sygnal ={};
 
         $scope.add.status = 'IDLE';
         $scope.provide.status = 'IDLE';
+        $scope.sygnal.status = 'IDLE';
 
         $scope.letterType();
 
@@ -34,6 +36,10 @@ app.controller('provideCtrl', function ($scope, $rootScope, $http, $base64, $tim
         $scope.provide.status = 'IDLE';
     }
 
+    $scope.tabSygnal = function () {
+
+        $scope.getLetter();
+    }
 
     $scope.letterType = function () {
 
@@ -76,7 +82,7 @@ app.controller('provideCtrl', function ($scope, $rootScope, $http, $base64, $tim
 
             if (response.data == 'ok') {
                 $scope.add.status = 'OK';
-                $timeout(function() { $scope.add.status = 0;}, 2000);
+                //$timeout(function() { $scope.add.status = 0;}, 2000);
                 $scope.add.name = '';
                 $scope.add.letter_type = '';
             }
@@ -162,4 +168,44 @@ app.controller('provideCtrl', function ($scope, $rootScope, $http, $base64, $tim
         printJS("./pdf/"+pdf+'.pdf');
     }
 
+    $scope.sygnalLetter = function() {
+
+
+        var customer_id = $scope.customer_id;
+        var data = $scope.sygnal;
+
+        $scope.sygnal.status = 'WAIT';
+        $http({
+            method: 'POST',
+            url: './api/letters/mail',
+            data: $.param({
+                _token: _token,
+                customer_id: customer_id,
+                list: data.id
+            }),
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+
+        })
+        .then(function(response) {
+
+            if(response.data == 'OK') {
+
+                $scope.sygnal.status = 'OK';
+            }
+            else {
+
+                $scope.sygnal.status = 'ERROR';
+            }
+            console.log(response.data);
+            $scope.getLetter();
+
+        }, function(rejection) {
+
+            $scope.sygnal.status = 'ERROR';
+            console.log(rejection);
+            $scope.getLetter();
+        });
+    }
 });

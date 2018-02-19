@@ -18,4 +18,6 @@ return [
     'btn_close'     =>  'Zamknij',
     'opt_select'    =>  'wybierz...',
     'inp_sender'    =>  'Wpisz nadawcę',
+    'btn_sygnal'    =>  'E-mail',
+
 ];

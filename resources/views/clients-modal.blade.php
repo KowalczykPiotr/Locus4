@@ -16,7 +16,7 @@
                             <a href="#tab-dodaj"     ng-click="tabDodaj()"  role="tab" class="nav-link active"   data-toggle="tab">@lang('clients.tab_add')</a>
                             <a href="#tab-wydaj"     ng-click="tabWydaj();" role="tab" class="nav-link"    data-toggle="tab">@lang('clients.tab_provide')</a>
                             <a href="#tab-lista"     ng-click="resetForm()" role="tab" class="nav-link" data-toggle="tab">@lang('clients.tab_list')</a>
-                            <a href="#tab-sygnal"    ng-click="resetForm()" role="tab" class="nav-link" data-toggle="tab">@lang('clients.tab_notifications')</a>
+                            <a href="#tab-sygnal"    ng-click="tabSygnal()" role="tab" class="nav-link" data-toggle="tab">@lang('clients.tab_notifications')</a>
                         </div>
                     </div>
 
@@ -42,6 +42,7 @@
 
                         <!-- Powiadomienia -->
                         <div class="tab-pane fade" id="tab-sygnal">
+                            @include('clients-modal-powiadomienia')
                         </div>
 
 

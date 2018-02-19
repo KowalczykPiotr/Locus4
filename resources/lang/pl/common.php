@@ -18,5 +18,9 @@ return [
     'lab_confirm'   =>  'Powtórz Hasło',
     'btn_register'  =>  'Zarejestruj',
     'btn_restore'   =>  'Ustaw Nowe Hasło',
+    'msg_addOK'     =>  'Dodawanie przesyłek zakończone powodzeniem',
+    'msg_addER'     =>  'Wystąpił nieoczekiwany błąd',
+    'msg_provideOK' =>  'Sukces. Możesz teraz wydrukować potwierdzenie',
+    'msg_provideER' =>  'Wystąpił nieoczekiwany błąd',
 
 ];
