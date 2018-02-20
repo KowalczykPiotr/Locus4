@@ -12,15 +12,14 @@
 
 
     <label><span class="oi oi-magnifying-glass"  aria-hidden="true"></span>
-        <input  ng-change="listFirst()" list="browsers" name="myBrowser" ng-model="dupa" /></label>
+        <input  ng-change="listFirst()" list="browsers" name="myBrowser" ng-model="dupa" />
+    </label>
 
 
 
     <div class="card-header mt-3">
         <h4>Użytkownicy: <small>Lista</small></h4>
     </div>
-
-
 
     <!-- --------------------------------------------------------->
 

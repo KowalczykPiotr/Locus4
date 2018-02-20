@@ -22,10 +22,11 @@
 
     <!-- Scripts -->
     <!--script src="{{ asset('js/app.js') }}"></script-->
+    <script src="{{ URL::asset('/js/jquery-3.3.1.min.js') }}" type="text/javascript"></script>
+
     <script src="{{ URL::asset('js/angular-1.6.6/angular.min.js') }}" type="text/javascript"></script>
     <script src="{{ URL::asset('/js/angular-1.6.6/angular-sanitize.min.js') }}" type="text/javascript"></script>
     <script src="{{ URL::asset('/js/angular-1.6.6/angular-base64.min.js') }}" type="text/javascript"></script>
-    <script src="{{ URL::asset('/js/jquery-3.3.1.min.js') }}" type="text/javascript"></script>
 
     <script src="{{ URL::asset('/js/bootstrap.min.js') }}" type="text/javascript"></script>
     <script src="{{ URL::asset('js/my-scripts/custom.js') }}" type="text/javascript"></script>

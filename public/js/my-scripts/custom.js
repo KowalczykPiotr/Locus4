@@ -10,3 +10,10 @@ app.filter("asDate", function () {
         return new Date(input);
     }
 });
+
+app.filter('to_trusted', ['$sce', function($sce){
+    return function(text) {
+        return $sce.trustAsHtml(text);
+    }
+}]);
+

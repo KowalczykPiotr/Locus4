@@ -1,4 +1,4 @@
-app.controller('clientsCtrl', function ($scope, $rootScope, $http, $base64, $timeout) {
+app.controller('clientsCtrl', function ($scope, $rootScope, $http, $base64, $timeout, $window) {
 
     const
         _EMPTY = 0,

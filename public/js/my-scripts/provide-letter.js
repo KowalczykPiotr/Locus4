@@ -5,6 +5,10 @@ app.controller('provideCtrl', function ($scope, $rootScope, $http, $base64, $tim
         $scope.provide.status = 0;
     }
 
+    $scope.loaded = function() {
+
+
+    }
 
 
     $rootScope.modalClient = function (id) {
@@ -20,13 +24,16 @@ app.controller('provideCtrl', function ($scope, $rootScope, $http, $base64, $tim
         $scope.sygnal.status = 'IDLE';
 
         $scope.letterType();
-
+        $scope.tabDodaj();
         jQuery("#modalClient").modal();
     }
+
+
 
     $scope.tabDodaj = function () {
 
         $scope.add.status = 'IDLE';
+        $scope.ClientsTabUrl = './letters_modal/add'
     }
 
 
@@ -34,11 +41,13 @@ app.controller('provideCtrl', function ($scope, $rootScope, $http, $base64, $tim
 
         $scope.getLetter();
         $scope.provide.status = 'IDLE';
+        $scope.ClientsTabUrl = './letters_modal/provide'
     }
 
     $scope.tabSygnal = function () {
 
         $scope.getLetter();
+        $scope.ClientsTabUrl = './letters_modal/sygnal'
     }
 
     $scope.letterType = function () {

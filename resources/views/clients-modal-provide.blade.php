@@ -1,18 +1,6 @@
 <form ng-submit="provideLetter()" class="form-horizontal" role="form">
     <div class="d-flex flex-column ddd">
-        <script>
-            $(document).ready(function() {
-                $("#fixModalTable>table").tableHeadFixer();
 
-                $("#chSelectProvide").change(function() {
-                    if ( $(this).is(':checked') ){
-
-                        $( "input:checked.provide-all" ).trigger( "click" );
-                    }
-                    $( ".provide-all" ).trigger( "click" );
-                });
-            });
-        </script>
         <div  id="fixModalTable" class="table-responsive">
             <table class="table table-sm table-hover">
                 <thead>
@@ -58,3 +46,21 @@
         </div>
     </div>
 </form>
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+
+
+        $("#fixModalTable>table").tableHeadFixer();
+
+        $("#chSelectProvide").change(function() {
+            if ( $(this).is(':checked') ){
+
+                $( "input:checked.provide-all" ).trigger( "click" );
+            }
+            $( ".provide-all" ).trigger( "click" );
+        });
+    });
+
+</script>
