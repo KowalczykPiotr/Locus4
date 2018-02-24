@@ -10,7 +10,7 @@ class LetterModalController extends Controller
 
     public function index($tab) {
 
-        return view('clients-modal-'.$tab);
+        return view('/clients-letters-modal/letters-'.$tab);
     }
 
 }

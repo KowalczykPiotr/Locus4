@@ -27,9 +27,16 @@ app.controller('clientsCtrl', function ($scope, $rootScope, $http, $base64, $tim
 
     $scope.selectClient = function (id) {
 
+        $rootScope.modalLetters(id);
+
+    }
+
+    $scope.selectClient2 = function (id) {
+
         $rootScope.modalClient(id);
 
     }
+
 
 
     $scope.listFirst = function () {

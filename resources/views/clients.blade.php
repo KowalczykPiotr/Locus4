@@ -1,4 +1,6 @@
 @extends('layouts.app')
+@section('title', 'Klienci')
+@section('mnu-clients', 'active')
 @section('content')
 
 <script src="{{ URL::asset('js/my-scripts/clients-list.js') }}" type="text/javascript"></script>
@@ -40,7 +42,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-click="selectClient(item.id)" ng-repeat="item in customers">
+            <tr ng-click="selectClient(item.id)" ng-dblclick="selectClient2(item.id)" ng-repeat="item in customers">
                 <td>[[item.id]]</td>
                 <td>[[item.name]]</td>
                 <td>[[item.email]]</td>
@@ -59,7 +61,8 @@
 
     <!-- --------------------------------------------------------->
 
-    @include('clients-modal')
+    @include('clients-letters-modal.letters')
+    @include('clients-clients-modal.clients')
 
 </div>
 @endsection

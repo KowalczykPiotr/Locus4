@@ -2,10 +2,14 @@
 
 return [
     'mnu_home'      =>  'Home',
+    'mnu_letters'   =>  'Korespondencja',
     'mnu_clients'   =>  'Klienci',
     'mnu_logout'    =>  'Wyloguj',
     'mnu_login'     =>  'Logowanie',
     'mnu_register'  =>  'Rejestracja',
+    'mnu_admin'     =>  'Administracja',
+    'mnu_letter_types'      =>  'Typy przesyłek',
+    'mnu_customer_groups'   =>  'Grupy klientów',
     'lab_login'     =>  'Logowanie',
     'lab_email'     =>  'E-Mail',
     'lab_password'  =>  'Hasło',

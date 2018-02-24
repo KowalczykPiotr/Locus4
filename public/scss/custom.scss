@@ -6,7 +6,7 @@ body {
 	width: 80%!important;
 }
 
-#modalClient {
+#modalLetters, #modalClients {
 
 	.modal-footer {
 		padding-right: 0px;
@@ -55,4 +55,19 @@ body {
 	td:nth-child(3), th:nth-child(3) { min-width: $column_3_width; }
 	td:nth-child(4), th:nth-child(4) { min-width: $column_4_width; }
 	
+}
+
+.tab-groups{
+
+	$column_1_width: 40px;
+	$column_2_width: 700px;
+	$column_3_width: 100px;
+	$column_4_width: 100px;
+
+	td:nth-child(1), th:nth-child(1) { width: $column_1_width; }
+	td:nth-child(2), th:nth-child(2) { min-width: $column_2_width; }
+	td:nth-child(3), th:nth-child(3) { min-width: $column_3_width; }
+	td:nth-child(4), th:nth-child(4) { min-width: $column_4_width; }
+
+
 }

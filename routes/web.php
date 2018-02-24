@@ -18,7 +18,24 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/clients', 'ClientsController@index');
+Route::get('/letters', 'LettersController@index');
 Route::get('/letters_modal/{tab}', 'LetterModalController@index');
+
+
+Route::get('admin/customer-groups/', 'Admin\CustomerGroupsController@index')->middleware('auth');
+Route::get('admin/customer-groups/add/', 'Admin\CustomerGroupsController@add')->middleware('auth');
+Route::post('admin/customer-groups/save/', 'Admin\CustomerGroupsController@save')->middleware('auth');
+Route::get('admin/customer-groups/delete/{id}', 'Admin\CustomerGroupsController@delete')->middleware('auth');
+Route::get('admin/customer-groups/edit/{id}', 'Admin\CustomerGroupsController@edit')->middleware('auth');
+Route::post('admin/customer-groups/update/', 'Admin\CustomerGroupsController@update')->middleware('auth');
+
+Route::get('admin/letter-types/', 'Admin\LetterTypesController@index')->middleware('auth');
+Route::get('admin/letter-types/add/', 'Admin\LetterTypesController@add')->middleware('auth');
+Route::post('admin/letter-types/save/', 'Admin\LetterTypesController@save')->middleware('auth');
+Route::get('admin/letter-types/delete/{id}', 'Admin\LetterTypesController@delete')->middleware('auth');
+Route::get('admin/letter-types/edit/{id}', 'Admin\LetterTypesController@edit')->middleware('auth');
+Route::post('admin/letter-types/update/', 'Admin\LetterTypesController@update')->middleware('auth');
+
 
 
 Route::get('api/customer/{id}', 'Api\CustomerController@show');

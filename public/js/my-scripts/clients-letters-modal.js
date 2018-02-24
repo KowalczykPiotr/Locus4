@@ -1,4 +1,4 @@
-app.controller('provideCtrl', function ($scope, $rootScope, $http, $base64, $timeout) {
+app.controller('lettersCtrl', function ($scope, $rootScope, $http, $base64, $timeout) {
 
     $scope.resetForm = function () {
 
@@ -11,7 +11,7 @@ app.controller('provideCtrl', function ($scope, $rootScope, $http, $base64, $tim
     }
 
 
-    $rootScope.modalClient = function (id) {
+    $rootScope.modalLetters = function (id) {
 
         $scope.customer_id = id;
 
@@ -25,7 +25,7 @@ app.controller('provideCtrl', function ($scope, $rootScope, $http, $base64, $tim
 
         $scope.letterType();
         $scope.tabDodaj();
-        jQuery("#modalClient").modal();
+        jQuery("#modalLetters").modal();
     }
 
 

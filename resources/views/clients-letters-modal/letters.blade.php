@@ -1,6 +1,6 @@
-<script src="{{ URL::asset('js/my-scripts/provide-letter.js') }}" type="text/javascript"></script>
+<script src="{{ URL::asset('js/my-scripts/clients-letters-modal.js') }}" type="text/javascript"></script>
 
-<div  ng-controller="provideCtrl" class="modal fade3" id="modalClient" tabindex="-1" role="dialog" aria-labelledby="modalDelArtConfirmLabel" aria-hidden="true">
+<div  ng-controller="lettersCtrl" class="modal fade3" id="modalLetters" tabindex="-1" role="dialog" aria-labelledby="modalDelArtConfirmLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div  class="modal-header">
@@ -13,10 +13,10 @@
                     <!-- Zakładki -->
                     <div class="col-3">
                         <div class="nav flex-column nav-pills" role="tablist">
-                            <a href="#tab-dodaj"     ng-click="tabDodaj()"  role="tab" class="nav-link active"   data-toggle="tab">@lang('clients.tab_add')</a>
-                            <a href="#tab-wydaj"     ng-click="tabWydaj()"  role="tab" class="nav-link"    data-toggle="tab">@lang('clients.tab_provide')</a>
-                            <a href="#tab-lista"     ng-click="resetForm()" role="tab" class="nav-link" data-toggle="tab">@lang('clients.tab_list')</a>
-                            <a href="#tab-sygnal"    ng-click="tabSygnal()" role="tab" class="nav-link" data-toggle="tab">@lang('clients.tab_notifications')</a>
+                            <a href=""     ng-click="tabDodaj()"   class="nav-link active"   data-toggle="tab">@lang('clients.tab_add')</a>
+                            <a href=""     ng-click="tabWydaj()"   class="nav-link"    data-toggle="tab">@lang('clients.tab_provide')</a>
+                            <a href=""     ng-click="resetForm()"  class="nav-link" data-toggle="tab">@lang('clients.tab_list')</a>
+                            <a href=""     ng-click="tabSygnal()"  class="nav-link" data-toggle="tab">@lang('clients.tab_notifications')</a>
                         </div>
                     </div>
 
