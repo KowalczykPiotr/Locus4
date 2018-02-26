@@ -58,12 +58,8 @@
                                 <a class="nav-link" href="{{ url('/letters') }}">@lang('common.mnu_letters')</a>
                             </li>
                             <li class="nav-item @yield('mnu-clients')">
-                                <a class="nav-link" href="{{ url('/clients') }}">@lang('common.mnu_clients')</a>
+                                <a class="nav-link" href="{{ url('/admin/clients/') }}">@lang('common.mnu_clients')</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Pricing</a>
-                            </li>
-
                             <li class="nav-item dropdown @yield('mnu-admin')">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     @lang('common.mnu_admin')
@@ -135,9 +131,17 @@
 
         @yield('content')
 
-
-
+        <div id="push"></div>
     </div>
+
+
+
+
+    <footer id="footer" class="navbar navbar-expand-lg navbar-dark bg-primary text-white">
+        <div class="container p-2">
+        <a href="http://webdeveloper.pc.pl" class="text-white">© 2018 Webdeveloper.pc.pl</a>
+        </div>
+    </footer>
 
 </body>
 </html>

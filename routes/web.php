@@ -17,9 +17,23 @@ Route::get('user/{id}', 'UserController@show');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/clients', 'ClientsController@index');
+
 Route::get('/letters', 'LettersController@index');
 Route::get('/letters_modal/{tab}', 'LetterModalController@index');
+
+Route::get('admin/clients/', 'Admin\ClientsController@index')->middleware('auth');
+Route::post('admin/clients/', 'Admin\ClientsController@index')->middleware('auth');
+Route::get('admin/clients/add', 'Admin\ClientsController@add')->middleware('auth');
+Route::post('admin/clients/save', 'Admin\ClientsController@save')->middleware('auth');
+
+Route::get('admin/clients/view/{id}', 'Admin\ClientsController@view')->middleware('auth');
+Route::get('admin/clients/edit/{id}', 'Admin\ClientsController@edit')->middleware('auth');
+Route::post('admin/clients/update', 'Admin\ClientsController@update')->middleware('auth');
+
+Route::get('admin/clients/delete/{id}', 'Admin\ClientsController@delete')->middleware('auth');
+
+
+Route::get('admin/clients/{skip}', 'Admin\ClientsController@index')->middleware('auth');
 
 
 Route::get('admin/customer-groups/', 'Admin\CustomerGroupsController@index')->middleware('auth');

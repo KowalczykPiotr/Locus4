@@ -12,9 +12,12 @@
 
     @include('messages')
 
-    <div class="card-header mt-3">
-        <h4>@lang('admin.client_groups')
-            <a href="{{ url('/admin/customer-groups/add/') }}"><button type="button" class="float-right btn btn-primary"><i class="fas fa-plus-square"></i></button></a>
+
+    <div class="jumbotron p-4 mt-3">
+        <h4>@lang('admin/client-groups.title')
+            <a href="{{ url('/admin/customer-groups/add/') }}" type="button" title="@lang('admin/client-groups.pop_add')" class="float-right btn btn-primary">
+                <i class="fas fa-plus-square"></i>
+            </a>
         </h4>
     </div>
 
@@ -22,10 +25,10 @@
         <table  class="table tab-groups table-sm table-hover">
             <thead>
             <tr>
-                <th>@lang('admin.id')</th>
-                <th>@lang('admin.customer_group_name')</th>
-                <th class="text-center">@lang('admin.customer_group_sort')</th>
-                <th><span class="float-right">@lang('admin.customer_group_actions')</span></th>
+                <th>@lang('admin/client-groups.col_id')</th>
+                <th>@lang('admin/client-groups.col_name')</th>
+                <th class="text-center">@lang('admin/client-groups.col_sort')</th>
+                <th><span class="float-right">@lang('admin/client-groups.col_action')</span></th>
             </tr>
             </thead>
             <tbody>
@@ -36,10 +39,10 @@
                 <td class="text-center">{{$group->sort_order}}</td>
                 <td>
                     <span class="float-right">
-                        <a href="{{ url('/admin/customer-groups/edit/')}}/{{$group->id}}" type="button" title="@lang('admin.pop_edit')" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
+                        <a href="{{ url('/admin/customer-groups/edit/')}}/{{$group->id}}" type="button" title="@lang('admin/client-groups.pop_edit')" class="btn btn-primary btn-sm btn-action"><i class="fas fa-edit"></i></a>
                         <a href="#"
-                           onclick="if (confirm('@lang('admin.confirm_del')')) {window.location.href =  '{{ url('/admin/customer-groups/delete/')}}/{{$group->id}}' }"
-                           type="button" title="@lang('admin.pop_del')"  class="btn btn-primary btn-sm"><i class="fas fa-trash-alt"></i></a>
+                           onclick="if (confirm('@lang('admin/client-groups.confirm_del')')) {window.location.href =  '{{ url('/admin/customer-groups/delete/')}}/{{$group->id}}' }"
+                           type="button" title="@lang('admin/client-groups.pop_del')"  class="btn btn-primary btn-sm btn-action"><i class="fas fa-trash-alt"></i></a>
                     </span>
                 </td>
             </tr>
@@ -47,7 +50,5 @@
             </tbody>
         </table>
     </div>
-
-
 </div>
 @endsection

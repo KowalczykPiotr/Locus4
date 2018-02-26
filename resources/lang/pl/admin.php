@@ -2,6 +2,14 @@
 
 return [
 
+    'clients'                  =>  'Klienci',
+    'sf_clients_name'          =>  'Nazwa',
+    'sf_clients_email'         =>  'Email',
+    'sf_clients_phone'         =>  'Telefon',
+    'sf_clients_group'         =>  'Grupa',
+    'sf_clients_select'         =>  'Wybierz',
+    'sf_btn_reset'             =>  'Wyczyść',
+    'sf_btn_search'            =>  'Szukaj',
 
     'letter_types'              =>  'Typy przesyłek',
     'letter_type_name'          =>  'Nazwa',

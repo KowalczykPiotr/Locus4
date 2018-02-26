@@ -71,3 +71,41 @@ body {
 
 
 }
+
+.btn-action{
+	height: 2rem;
+	width: 2rem;
+	margin: 0.1rem;
+}
+
+
+.tab-clients{
+
+	$column_1_width: 2rem;
+	$column_2_width: 20rem;
+	$column_3_width: 10rem;
+	$column_4_width: 10rem;
+	$column_5_width: 5rem;
+
+	td:nth-child(1), th:nth-child(1) { width: $column_1_width; }
+	td:nth-child(2), th:nth-child(2) { min-width: $column_2_width; }
+	td:nth-child(3), th:nth-child(3) { min-width: $column_3_width; }
+	td:nth-child(4), th:nth-child(4) { min-width: $column_4_width; }
+
+
+}
+
+html, body {
+	height: 100%;
+}
+
+#app {
+	min-height: 100%;
+	height: auto !important; /*min-height hack*/
+	height: 100%;            /*min-height hack*/
+	margin-bottom: -4em;
+}
+
+#push {
+	min-height: 6em;
+}
